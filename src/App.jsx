@@ -9,8 +9,8 @@ import { useEffect, useState } from "react";
 import { InfinitySpin } from "react-loader-spinner";
 import ContactSection from "./components/Contact";
 import { BrowserRouter, Route, Routes } from "react-router-dom"; // ✅ FIXED
-import Signin from "./assets/pages/Signin";
-import Signup from "./assets/pages/Signup";
+// import Signin from "./assets/pages/Signin";
+// import Signup from "./assets/pages/Signup";
 import Footer from "./components/Footer";
 import ProductDetail from "./components/ProductDetail";
 import NotFound from "./components/NotFound";
@@ -72,8 +72,8 @@ function App() {
           />
 
           {/* Auth Pages */}
-          <Route path="/pages/signin" element={<Signin />} />
-          <Route path="/pages/signup" element={<Signup />} />
+          {/* <Route path="/pages/signin" element={<Signin />} /> */}
+          {/* <Route path="/pages/signup" element={<Signup />} /> */}
 
           {/* Product Detail */}
           <Route path="/product/:id" element={<ProductDetail />} />

@@ -1,12 +1,10 @@
 import { Carousel } from "antd";
-import React from "react";
-import images from "../assets/image1.jpg"; // Assuming you have an image file in your assets
-import images2 from "../assets/image2.jpg"; // Assuming you have an image file in your assets
-import { div } from "framer-motion/client";
+import images2 from "../assets/image1.jpg";
+import image3 from "../assets/image2.jpg";
 
 const carouselItems = [
   {
-    image: images,
+    image: "https://img.freepik.com/premium-photo/men-s-underwear-store-cotton-men-s-briefs_130265-8603.jpg",
     title: "Premium Men's Boxers",
     description: "Experience unmatched comfort and style with our latest collection."
   },
@@ -16,7 +14,7 @@ const carouselItems = [
     description: "Seamless fit and breathable fabric for everyday wear."
   },
   {
-    image: "https://link-to-your-image3.jpg", // lingerie still life
+    image: image3,
     title: "Ladies' Underwear",
     description: "Elegance and comfort combined in our new women's line."
   }
@@ -24,22 +22,20 @@ const carouselItems = [
 
 function Carousalha() {
   return (
-    
-      <div className="relative max-w-[1200px] mx-auto rounded-2xl overflow-hidden shadow-xl ">
+    <div className="relative w-full mx-auto overflow-hidden shadow-xl">
       <Carousel autoplay dotPosition="bottom">
         {carouselItems.map((item, index) => (
           <div key={index} className="relative">
             <img
               src={item.image}
               alt={`slide-${index}`}
-              className="w-full h-[380px] md:h-[500px] object-cover"
+              className="w-full h-[250px] sm:h-[400px] md:h-[500px] lg:h-[650px] object-cover"
             />
-
             <div className="absolute top-0 left-0 w-full h-full bg-black/40 flex flex-col justify-center items-center text-white px-6">
-              <h2 className="text-2xl md:text-5xl font-extrabold mb-2 drop-shadow-lg">
+              <h2 className="text-2xl md:text-5xl font-extrabold mb-3 drop-shadow-lg">
                 {item.title}
               </h2>
-              <p className="text-sm md:text-lg max-w-[700px] mb-5 opacity-90">
+              <p className="text-sm md:text-lg max-w-[700px] mb-5 opacity-90 text-center">
                 {item.description}
               </p>
             </div>
@@ -47,7 +43,6 @@ function Carousalha() {
         ))}
       </Carousel>
     </div>
-  
   );
 }
 
