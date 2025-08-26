@@ -12,7 +12,7 @@ import { BrowserRouter, Route, Routes } from "react-router";
 import Signin from "./components/pages/Signin";
 import Signup from "./components/pages/Signup";
 import Footer from "./components/Footer";
-import FeedbackPopup from "./components/cardPopup";
+// import FeedbackPopup from "./components/cardPopup";
 
 
 
@@ -53,18 +53,18 @@ function App() {
   return (
     <>
 
-       <FeedbackPopup/>
+      {/* <FeedbackPopup/> */}
 
-         <BrowserRouter>
-         <Routes>
-          <Route path="/signin" element={<Signin/>}/>
-          <Route path="/signup" element={<Signup/>}/>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/signin" element={<Signin />} />
+          <Route path="/signup" element={<Signup />} />
 
 
 
-         </Routes>
-         
-         </BrowserRouter>
+        </Routes>
+
+      </BrowserRouter>
 
 
 
@@ -72,16 +72,16 @@ function App() {
       <div className="App">
         {/* 🧾 Your full SK Garment website goes here */}
         <Header />
-     
+
         <Carousalha />
         <Hero />
         <Cards />
         <Testimonials />
-        <ContactSection/>
-        <Footer/>
+        <ContactSection />
+        <Footer />
       </div>
 
-      
+
 
 
 

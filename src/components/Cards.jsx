@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const products = [
   {
+    id: 1,
     name: "Boxer",
     frontImage: "https://m.media-amazon.com/images/I/717IJINcB2L._AC_UY1100_.jpg",
     hoverImage: "https://img01.ztat.net/article/spp-media-p1/8285e571c57e4f9cab4b66511c6a6948/bd7c142eed5248a3ba6e726c766a1ca4.jpg?imwidth=1800",
@@ -10,6 +12,7 @@ const products = [
     rating: 4.0,
   },
   {
+    id: 2,
     name: "Jeans",
     frontImage: "https://static-01.daraz.pk/p/a1a97d96abf7722a017fb1ee3c88739d.jpg",
     hoverImage: "https://i.ebayimg.com/images/g/T2sAAOSwogVl1gnv/s-l1200.jpg",
@@ -18,6 +21,7 @@ const products = [
     rating: 4.6,
   },
   {
+    id: 3,
     name: "UnderJeans",
     frontImage: "https://cdn.aboutstatic.com/file/images/7fc945c7e70a5b63c2ed36571675f31c.jpg",
     hoverImage: "https://img01.ztat.net/article/spp-media-p1/216b2f6717dd485394356b87f49c1df9/a48d314afb0f4b639582116a9a81e670.jpg?imwidth=1800",
@@ -26,6 +30,7 @@ const products = [
     rating: 4.9,
   },
   {
+    id: 4,
     name: "Ladies Under Wear",
     frontImage: "https://m.media-amazon.com/images/I/61Oi-M7zftL._AC_UY1100_.jpg",
     hoverImage: "https://media.naheed.pk/catalog/product/cache/57044254b6ba66615c533891fd7cf70f/c/o/config-100676-1_1.jpg",
@@ -35,6 +40,7 @@ const products = [
   },
 
   {
+    id: 5,
     name: "Naker",
     frontImage: "https://m.media-amazon.com/images/I/51ef58uHevL._AC_UY1100_.jpg",
     hoverImage: "https://imagescdn.simons.ca/images/7757-25222-41-A1_2/6-ultra-comfortable-blue-boxer-brief.jpg?__=15",
@@ -43,6 +49,7 @@ const products = [
     rating: 4.2,
   },
   {
+    id: 6,
     name: "Panties",
     frontImage: "https://nightynight.pk/cdn/shop/products/AF-115_-_I38A3868-20180630-15-06-09-Bridal_Panty_Clothing_Cotton_Panty_Ladies_Undergarments_Online_Panty_Undergarment_Women-https---dikhawa.pk_Online_Shopping_in_Pakistan-20180630-15-06-09--http_48f3e.jpg?v=1530595964",
     hoverImage: "https://m.media-amazon.com/images/I/81D-BtzZ9IL._AC_SL1500_.jpg",
@@ -56,7 +63,9 @@ const products = [
 
 export default function Cards() {
   const [showAll, setShowAll] = useState(false);
+  const navigate = useNavigate();
 
+  // whatsapp
   const handleWhatsApp = (productName) => {
     const phoneNumber = "+923190266227";
     const message = `Hello, I am interested in your product: ${productName}`;
@@ -64,11 +73,18 @@ export default function Cards() {
     window.open(url, "_blank");
   };
 
+  const handleViewMore = (id) => {
+    navigate(`/product/${id}`);
+  };
+
   const visibleProducts = showAll ? products : products.slice(0, 3);
 
   return (
     <div className="p-6">
-      <h1 className="text-4xl text-center font-bold mb-4">Our Products</h1>
+      <h1 className="text-5xl text-center font-bold mb-4 bg-gradient-to-r from-purple-800 via-blue-500  bg-clip-text text-transparent">
+        Our Products
+      </h1>
+
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {visibleProducts.map((product, index) => (
@@ -96,12 +112,22 @@ export default function Cards() {
             <p className="text-black text-lg font-normal capitalize mb-3">
               {product.description}
             </p>
-            <button
-              onClick={() => handleWhatsApp(product.name)}
-              className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg"
-            >
-              Order on WhatsApp
-            </button>
+            <div className="flex justify-items-center gap-6 ">
+
+              <button
+                onClick={() => handleWhatsApp(product.name)}
+                className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg"
+              >
+                Order on WhatsApp
+              </button>
+              <button
+                onClick={() => handleViewMore(product.id)}
+                className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg"
+              >
+                view Details
+              </button>
+
+            </div>
           </div>
         ))}
       </div>

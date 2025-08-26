@@ -1,6 +1,7 @@
 import { Button } from "antd";
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
+import CustomizedBadge from "./CustomizedBadge";
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,13 +21,12 @@ function Header() {
   }, []);
 
   return (
-    <div className="h-[72px] md:h-[80px]">
+    <div className="h-[42px] md:h-[60px]">
       <header
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-          scrolled
-            ? "backdrop-blur-md bg-white/70 shadow-md"
-            : "bg-white shadow-sm"
-        }`}
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled
+          ? "backdrop-blur-md bg-white/70 shadow-md"
+          : "bg-white shadow-sm"
+          }`}
       >
         {/* Navbar Content */}
         <div className="container mx-auto flex flex-wrap items-center justify-between px-4 sm:px-6 md:px-10 py-3 md:py-4">
@@ -78,6 +78,8 @@ function Header() {
                 Login
               </Button>
             )}
+
+            <CustomizedBadge />
           </div>
 
           {/* === MOBILE TOGGLE === */}
@@ -121,6 +123,8 @@ function Header() {
                   Login
                 </Button>
               )}
+              <CustomizedBadge />
+
             </div>
           </div>
         )}
