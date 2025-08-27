@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
 
 function Hero() {
+
   return (
-    <section className="relative bg-white text-gray-800 overflow-hidden">
+    <section id="about" className="relative bg-white text-gray-800 overflow-hidden">
       {/* Background Circle Blur */}
-      <div className="absolute -top-20 -left-20 w-80 h-80 bg-blue-900 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse z-0"></div>
+      <div className="absolute -top-20 -left-20 w-80 h-80 bg-white rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse z-0"></div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 flex flex-col-reverse md:flex-row items-center gap-12">
         {/* Text Section */}
@@ -43,7 +44,8 @@ function Hero() {
         >
           <img
             className="rounded-xl w-full h-auto object-cover shadow-xl"
-            src="https://media.istockphoto.com/id/120144461/photo/attractive-male-body-with-white-underwear.jpg?s=612x612&w=0&k=20&c=PhTdwRQlU6QTGeBxePRQc_pG6p637rPfy2WDfTwhtDE="
+            src="https://img.freepik.com/free-photo/portrait-sporty-handsome-strong-man-healthy-smiling-athletic-fitness-model-posing-near-gray-wall-white-underwear_158538-17455.jpg?semt=ais_hybrid&w=740&q=80"
+
             alt="hero"
           />
         </motion.div>

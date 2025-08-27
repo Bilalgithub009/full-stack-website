@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+
 const products = [
   {
     id: 1,
@@ -66,12 +67,12 @@ export default function Cards() {
   const navigate = useNavigate();
 
   // whatsapp
-  const handleWhatsApp = (productName) => {
-    const phoneNumber = "+923190266227";
-    const message = `Hello, I am interested in your product: ${productName}`;
-    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-    window.open(url, "_blank");
-  };
+  // const handleWhatsApp = (productName) => {
+  //   const phoneNumber = "+923190266227";
+  //   const message = `Hello, I am interested in your product: ${productName}`;
+  //   const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+  //   window.open(url, "_blank");
+  // };
 
   const handleViewMore = (id) => {
     navigate(`/product/${id}`);
@@ -80,7 +81,7 @@ export default function Cards() {
   const visibleProducts = showAll ? products : products.slice(0, 3);
 
   return (
-    <div className="p-6">
+    <div id="products" className="p-6">
       <h1 className="text-5xl text-center font-bold mb-4 bg-gradient-to-r from-purple-800 via-blue-500  bg-clip-text text-transparent">
         Our Products
       </h1>
@@ -113,16 +114,16 @@ export default function Cards() {
               {product.description}
             </p>
             <div className="flex justify-items-center gap-6 ">
-
+              {/* 
               <button
                 onClick={() => handleWhatsApp(product.name)}
                 className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg"
               >
                 Order on WhatsApp
-              </button>
+              </button> */}
               <button
                 onClick={() => handleViewMore(product.id)}
-                className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg"
+                className="bg-blue-600 hover:bg-blue-400 text-white px-16 py-2  mx-auto rounded-lg"
               >
                 view Details
               </button>
@@ -134,9 +135,10 @@ export default function Cards() {
 
       {/* Show More / Show Less Button */}
       <div className="text-center mt-6">
+
         <button
           onClick={() => setShowAll(!showAll)}
-          className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-lg"
+          className={` ${showAll ? "bg-red-500 hover:bg-red-600" : "bg-blue-600 hover:bg-blue-400"} text-white px-6 py-2 rounded-lg`}
         >
           {showAll ? "Show Less" : "Show More"}
         </button>

@@ -9,15 +9,15 @@ import { useEffect, useState } from "react";
 import { InfinitySpin } from "react-loader-spinner";
 import ContactSection from "./components/Contact";
 import { BrowserRouter, Route, Routes } from "react-router-dom"; // ✅ FIXED
-// import Signin from "./assets/pages/Signin";
-// import Signup from "./assets/pages/Signup";
 import Footer from "./components/Footer";
 import ProductDetail from "./components/ProductDetail";
 import NotFound from "./components/NotFound";
 import CheckoutForm from "./components/CheckOutForm";
+import { AddToCart } from "./components/AddToCart";
 
 function App() {
   const [loading, setLoading] = useState(true);
+
 
   const loaderContainerStyle = {
     display: "flex",
@@ -51,12 +51,12 @@ function App() {
 
   return (
     <>
+
       {/* <FeedbackPopup /> */}
       <BrowserRouter>
         <Header />
 
         <Routes>
-          {/* Main Page */}
           <Route
             path="/"
             element={
@@ -70,15 +70,12 @@ function App() {
               </>
             }
           />
-
-          {/* Auth Pages */}
-          {/* <Route path="/pages/signin" element={<Signin />} /> */}
-          {/* <Route path="/pages/signup" element={<Signup />} /> */}
-
           {/* Product Detail */}
           <Route path="/product/:id" element={<ProductDetail />} />
           <Route path="*" element={<NotFound />} />
           <Route path="/CheckOutForm" element={<CheckoutForm />} />
+          <Route path="/addtocart" element={<AddToCart />} />
+
 
         </Routes>
       </BrowserRouter>

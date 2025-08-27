@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Star } from "lucide-react";
 
 function FeedbackPopup() {
@@ -34,11 +34,10 @@ function FeedbackPopup() {
                   key={star}
                   size={36}
                   onClick={() => setRating(star)}
-                  className={`cursor-pointer transition-colors ${
-                    rating >= star
+                  className={`cursor-pointer transition-colors ${rating >= star
                       ? "text-yellow-400 fill-yellow-400"
                       : "text-gray-300"
-                  }`}
+                    }`}
                 />
               ))}
             </div>
@@ -47,11 +46,10 @@ function FeedbackPopup() {
             <button
               onClick={handleSubmit}
               disabled={rating === 0}
-              className={`mt-2 px-4 py-2 rounded-lg transition ${
-                rating === 0
+              className={`mt-2 px-4 py-2 rounded-lg transition ${rating === 0
                   ? "bg-gray-400 text-white cursor-not-allowed"
                   : "bg-gray-800 text-white hover:bg-gray-700"
-              }`}
+                }`}
             >
               Submit Feedback
             </button>

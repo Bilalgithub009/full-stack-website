@@ -1,6 +1,6 @@
 import { Carousel } from "antd";
 import images2 from "../assets/image1.jpg";
-import image3 from "../assets/image2.jpg";
+// import image3 from "../assets/image2.jpg";
 
 const carouselItems = [
   {
@@ -9,12 +9,12 @@ const carouselItems = [
     description: "Experience unmatched comfort and style with our latest collection."
   },
   {
-    image: images2,
+    image: "https://t3.ftcdn.net/jpg/03/55/08/24/360_F_355082414_20Im18C0AVryxRxyvIfgwhZVX3falxVd.jpg",
     title: "Under Jeans Essentials",
     description: "Seamless fit and breathable fabric for everyday wear."
   },
   {
-    image: image3,
+    image: "https://m.media-amazon.com/images/I/71trFkIrNaL.jpg",
     title: "Ladies' Underwear",
     description: "Elegance and comfort combined in our new women's line."
   }
@@ -22,7 +22,7 @@ const carouselItems = [
 
 function Carousalha() {
   return (
-    <div className="relative w-full mx-auto overflow-hidden shadow-xl">
+    <div id="home" className="relative w-full mx-auto overflow-hidden shadow-xl">
       <Carousel autoplay dotPosition="bottom">
         {carouselItems.map((item, index) => (
           <div key={index} className="relative">

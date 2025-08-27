@@ -1,16 +1,15 @@
-import React from "react";
 import { FaWhatsapp } from "react-icons/fa";
 
 const ContactSection = () => {
   return (
-    <section className="bg-blue-50 py-16 px-4 sm:px-6 lg:px-8 animate-fadeIn relative">
+    <section id="contact" className="bg-white py-16 px-4 sm:px-6 lg:px-8 animate-fadeIn relative">
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-2xl sm:text-4xl font-bold text-black mb-4">
           Contact Us SK <span className="text-blue-600">Garments Team</span>
         </h2>
 
         <p className="text-black font-semibold text-lg sm:text-xl">
-          We’d love to hear from you — whether it’s about sizes, custom orders, 
+          We’d love to hear from you — whether it’s about sizes, custom orders,
           or just feedback on our latest styles. Team SK Garments is here for you!
         </p>
       </div>

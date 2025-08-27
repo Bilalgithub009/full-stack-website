@@ -42,7 +42,7 @@ function Testimonials() {
   ];
 
   return (
-    <div className="bg-gradient-to-br from-blue-50 via-white to-blue-100 py-8 px-">
+    <div className="bg-white py-8 px-">
       <div className="max-w-3xl mx-auto text-center">
         <h1 className="text-2xl md:text-4xl font-extrabold text-blue-900 mb-6">
           What People Say About Us
