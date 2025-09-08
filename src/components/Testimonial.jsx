@@ -49,7 +49,7 @@ function Testimonials() {
         </h1>
         <p className="text-gray-600 text-base md:text-lg mb-8">
           Trusted by real users of{" "}
-          <span className="font-semibold text-blue-700">SK Garments</span>
+          <span className="font-semibold text-blue-700">BS Garments</span>
         </p>
       </div>
 

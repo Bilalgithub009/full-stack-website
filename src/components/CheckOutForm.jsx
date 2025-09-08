@@ -82,10 +82,7 @@ const CheckoutForm = ({ open, onClose, cartItems = [], }) => {
         setItems(updated);
     };
 
-    // Total calculate karna
-    const calculateTotal = () => {
-        return items.reduce((acc, item) => acc + item.price * item.quantity, 0);
-    };
+
 
 
 
@@ -137,55 +134,6 @@ const CheckoutForm = ({ open, onClose, cartItems = [], }) => {
                     >
                         <Input.TextArea rows={3} placeholder="Enter your address" />
                     </Form.Item>
-
-                    {/* ✅ Quantity Field */}
-
-                    {items.length === 0 ? (
-                        <p className="text-gray-500">Cart is empty.</p>
-                    ) : (
-                        <div className="space-y-4">
-                            {items.map((item, index) => (
-                                <div
-                                    key={index}
-                                    className="flex items-center justify-between border-b pb-2"
-                                >
-                                    <div>
-                                        <h3 className="font-medium">{item.title}</h3>
-                                        <p className="text-sm text-gray-500">Price: ${item.price}</p>
-                                    </div>
-                                    <div className="flex items-center gap-2">
-                                        <button
-                                            onClick={() => updateQuantity(index, "decrease")}
-                                            className="px-2 py-1 bg-gray-200 rounded"
-                                        >
-                                            -
-                                        </button>
-                                        <span>{item.quantity}</span>
-                                        <button
-                                            onClick={() => updateQuantity(index, "increase")}
-                                            className="px-2 py-1 bg-gray-200 rounded"
-                                        >
-                                            +
-                                        </button>
-                                    </div>
-                                </div>
-                            ))}
-
-                            {/* Total Amount */}
-                            <div className="flex justify-between font-semibold text-lg pt-4 border-t">
-                                <span>Total:</span>
-                                <span>${calculateTotal()}</span>
-                            </div>
-                        </div>
-                    )}
-
-
-
-                    {/* Total Amount */}
-                    <div className="flex justify-between font-semibold text-lg pt-4 border-t">
-                        <span>Total:</span>
-                        <span>${calculateTotal()}</span>
-                    </div>
 
 
                     <Form.Item>

@@ -67,12 +67,12 @@ export default function Cards() {
   const navigate = useNavigate();
 
   // whatsapp
-  // const handleWhatsApp = (productName) => {
-  //   const phoneNumber = "+923190266227";
-  //   const message = `Hello, I am interested in your product: ${productName}`;
-  //   const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-  //   window.open(url, "_blank");
-  // };
+  const handleWhatsApp = (productName) => {
+    const phoneNumber = "+923190266227";
+    const message = `Hello, I am interested in your product: ${productName}`;
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank");
+  };
 
   const handleViewMore = (id) => {
     navigate(`/product/${id}`);
@@ -81,7 +81,7 @@ export default function Cards() {
   const visibleProducts = showAll ? products : products.slice(0, 3);
 
   return (
-    <div id="products" className="p-6">
+    <div id="products" className="p-6 bg-white">
       <h1 className="text-5xl text-center font-bold mb-4 bg-gradient-to-r from-purple-800 via-blue-500  bg-clip-text text-transparent">
         Our Products
       </h1>
@@ -91,7 +91,8 @@ export default function Cards() {
         {visibleProducts.map((product, index) => (
           <div
             key={index}
-            className="border rounded-xl shadow-lg p-4 text-center group relative overflow-hidden"
+            className="rounded-xl shadow-md p-4 text-center group relative overflow-hidden bg-white"
+
           >
             {/* Image wrapper */}
             <div className="relative w-full h-64 overflow-hidden rounded-lg">
@@ -105,11 +106,12 @@ export default function Cards() {
               <img
                 src={product.hoverImage}
                 alt={product.name}
-                className="w-full h-full object-cover absolute top-0 left-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                className="w-full  h-full object-cover absolute top-0 left-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
               />
             </div>
 
-            <h2 className="text-2xl font-bold mt-3">{product.name}</h2>
+
+            <h2 className="text-2xl font-bold mt-3 text-black">{product.name}</h2>
             <p className="text-black text-lg font-normal capitalize mb-3">
               {product.description}
             </p>
@@ -123,7 +125,7 @@ export default function Cards() {
               </button> */}
               <button
                 onClick={() => handleViewMore(product.id)}
-                className="bg-blue-600 hover:bg-blue-400 text-white px-16 py-2  mx-auto rounded-lg"
+                className=" text-white px-16 py-2 bg-blue-500 hover:bg-blue-600 mx-auto rounded-lg"
               >
                 view Details
               </button>

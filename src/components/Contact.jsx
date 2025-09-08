@@ -5,7 +5,7 @@ const ContactSection = () => {
     <section id="contact" className="bg-white py-16 px-4 sm:px-6 lg:px-8 animate-fadeIn relative">
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-2xl sm:text-4xl font-bold text-black mb-4">
-          Contact Us SK <span className="text-blue-600">Garments Team</span>
+          Contact Us Bilal <span className="text-blue-600">Garments Team</span>
         </h2>
 
         <p className="text-black font-semibold text-lg sm:text-xl">

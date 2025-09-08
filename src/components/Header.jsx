@@ -26,8 +26,8 @@ export default function Header() {
         <div className="container mx-auto flex flex-wrap items-center justify-between px-4 sm:px-6 md:px-10 py-3 md:py-4 h-[60px] md:h-[80px]">
           {/* === LOGO === */}
           <div className="flex items-center space-x-3">
-            <p className="text-black font-bold text-2xl sm:text-3xl tracking-wide">
-              SK
+            <p className="text-black font-serif text-xl sm:text-3xl">
+              BILAL
             </p>
             <div className="relative overflow-hidden h-6 w-28 sm:w-32">
               <div className="animate-slideWords absolute top-0 left-0 flex flex-col space-y-1 text-blue-600 font-medium text-sm sm:text-base">
@@ -39,6 +39,7 @@ export default function Header() {
               </div>
             </div>
           </div>
+
 
           {/* === DESKTOP NAV === */}
           <nav className="hidden md:flex items-center gap-10 text-base font-medium text-gray-700">

@@ -1,538 +1,67 @@
+/* ✅ Tailwind v4 import */
+@import "tailwindcss";
+
+/* ✅ Extra libraries */
 @import "slick-carousel/slick/slick.css"; 
 @import "slick-carousel/slick/slick-theme.css";
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
+/* ✅ Theme variables (light & dark mode) */
+@layer base {
+  :root {
+    --border: 214.3 31.8% 91.4%;
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
 
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
 
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+  }
+}
+
+/* ✅ Reset body (Tailwind handle karega background) */
 body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-
-
-
-
-.card {
-  background-color: var(--bg-color);
-  margin-left: 10px;
-  border-radius: 1.25rem;
-}
-.loader {
-  color: rgb(124, 124, 124);
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  font-size: 25px;
-  -webkit-box-sizing: content-box;
-  box-sizing: content-box;
-  height: 40px;
-  padding: 0px 0px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  border-radius: 8px;
-}
-
-.words {
-  overflow: hidden;
-  position: relative;
-}
-.words::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    var(--bg-color) 10%,
-    transparent 30%,
-    transparent 70%,
-    var(--bg-color) 90%
-  );
-  z-index: 20;
-}
-
-.word {
-  display: block;
-  height: 100%;
-  padding-left: 6px;
-  color: #956afa;
-  animation: spin_4991 4s infinite;
-}
-
-@keyframes spin_4991 {
-  10% {
-    -webkit-transform: translateY(-102%);
-    transform: translateY(-102%);
-  }
-
-  25% {
-    -webkit-transform: translateY(-100%);
-    transform: translateY(-100%);
-  }
-
-  35% {
-    -webkit-transform: translateY(-202%);
-    transform: translateY(-202%);
-  }
-
-  50% {
-    -webkit-transform: translateY(-200%);
-    transform: translateY(-200%);
-  }
-
-  60% {
-    -webkit-transform: translateY(-302%);
-    transform: translateY(-302%);
-  }
-
-  75% {
-    -webkit-transform: translateY(-300%);
-    transform: translateY(-300%);
-  }
-
-  85% {
-    -webkit-transform: translateY(-402%);
-    transform: translateY(-402%);
-  }
-
-  100% {
-    -webkit-transform: translateY(-400%);
-    transform: translateY(-400%);
-  }
-}
-
-/* From Uiverse.io by TISEPSE */ 
-.btn2 {
-  position: relative;
-  display: inline-block;
-  padding: 15px 30px;
-  border: 2px solid #fefefe;
-  text-transform: uppercase;
-  color: #fefefe;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 20px;
-  transition: 0.3s;
-}
-
-.btn2::before {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  width: calc(100% + 4px);
-  height: calc(100% - -2px);
-  background-color: #212121;
-  transition: 0.3s ease-out;
-  transform: scaleY(1);
-}
-
-.btn2::after {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  width: calc(100% + 4px);
-  height: calc(100% - 50px);
-  background-color: #212121;
-  transition: 0.3s ease-out;
-  transform: scaleY(1);
-}
-
-.btn2:hover::before {
-  transform: translateY(-25px);
-  height: 0;
-}
-
-.btn2:hover::after {
-  transform: scaleX(0);
-  transition-delay: 0.15s;
-}
-
-.btn2:hover {
-  border: 2px solid #fefefe;
-}
-
-.btn2 span {
-  position: relative;
-  z-index: 3;
-}
-
-button {
-  text-decoration: none;
-  border: none;
-  background-color: transparent;
-}
 
 @keyframes slideWords {
-  0%   { transform: translateY(0%); }
-  20%  { transform: translateY(-20%); }
-  40%  { transform: translateY(-40%); }
-  60%  { transform: translateY(-60%); }
-  80%  { transform: translateY(-80%); }
-  100% { transform: translateY(0%); }
+  0% { transform: translateY(0%); }
+  20% { transform: translateY(0%); }
+
+  25% { transform: translateY(-20%); }
+  45% { transform: translateY(-20%); }
+
+  50% { transform: translateY(-40%); }
+  70% { transform: translateY(-40%); }
+
+  75% { transform: translateY(-60%); }
+  95% { transform: translateY(-60%); }
+
+  100% { transform: translateY(-80%); }
 }
 
 .animate-slideWords {
-  animation: slideWords 10s infinite ease-in-out;
+  animation: slideWords 10s infinite;
 }
-
-/* From Uiverse.io by eslam-hany */ 
-.book {
-  position: relative;
-  border-radius: 10px;
-  width: 220px;
-  height: 300px;
-  background-color: whitesmoke;
-  -webkit-box-shadow: 1px 1px 12px #000;
-  box-shadow: 1px 1px 12px #000;
-  -webkit-transform: preserve-3d;
-  -ms-transform: preserve-3d;
-  transform: preserve-3d;
-  -webkit-perspective: 2000px;
-  perspective: 2000px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  color: #000;
-}
-
-.cover {
-  top: 0;
-  position: absolute;
-  background-color: lightgray;
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
-  cursor: pointer;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-  -webkit-transform-origin: 0;
-  -ms-transform-origin: 0;
-  transform-origin: 0;
-  -webkit-box-shadow: 1px 1px 12px #000;
-  box-shadow: 1px 1px 12px #000;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.book:hover .cover {
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-  -webkit-transform: rotatey(-80deg);
-  -ms-transform: rotatey(-80deg);
-  transform: rotatey(-80deg);
-}
-
-p {
-  font-size: 20px;
-  font-weight: bolder;
-}
-
-/* Add this in your global CSS or Tailwind layer */
-.perspective {
-  perspective: 1000px;
-}
-.transform-style {
-  transform-style: preserve-3d;
-}
-.backface-hidden {
-  backface-visibility: hidden;
-}
-.rotate-y-180 {
-  transform: rotateY(180deg);
-}
-.hover\:rotate-y-180:hover {
-  transform: rotateY(180deg);
-}
-
-/* In your global CSS file or Tailwind config if needed */
-.perspective {
-  perspective: 1000px;
-}
-.transform-style {
-  transform-style: preserve-3d;
-}
-.backface-hidden {
-  backface-visibility: hidden;
-}
-.rotate-y-180 {
-  transform: rotateY(180deg);
-}
-
-/* From Uiverse.io by akshat-patel28 */ 
-.form-container {
-  width: 350px;
-  height: 500px;
-  background-color: #fff;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  border-radius: 10px;
-  box-sizing: border-box;
-  padding: 20px 30px;
-}
-
-.title {
-  text-align: center;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  margin: 10px 0 30px 0;
-  font-size: 28px;
-  font-weight: 800;
-}
-
-.form {
-  width: 100%;
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  gap: 18px;
-  margin-bottom: 15px;
-}
-
-.input {
-  border-radius: 20px;
-  border: 1px solid #c0c0c0;
-  outline: 0 !important;
-  box-sizing: border-box;
-  padding: 12px 15px;
-}
-
-.page-link {
-  text-decoration: underline;
-  margin: 0;
-  text-align: center;
-  color: #747474;
-  text-decoration-color: #747474;
-}
-
-.page-link-label {
-  cursor: pointer;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  font-size: 9px;
-  font-weight: 700;
-}
-
-/* Wrapper to center the form */
-.signin-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh; /* full screen height */
-  background: #e6f0fa; /* soft blue shade background */
-  padding: 20px;
-}
-
-
-.page-link-label:hover {
-  color: #000;
-}
-
-.form-btn {
-  padding: 10px 15px;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  border-radius: 20px;
-  border: 0 !important;
-  outline: 0 !important;
-  background: teal;
-  color: white;
-  cursor: pointer;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
-
-.form-btn:active {
-  box-shadow: none;
-}
-
-.sign-up-label {
-  margin: 0;
-  font-size: 10px;
-  color: #747474;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-}
-
-.sign-up-link {
-  margin-left: 1px;
-  font-size: 11px;
-  text-decoration: underline;
-  text-decoration-color: teal;
-  color: teal;
-  cursor: pointer;
-  font-weight: 800;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-}
-
-.buttons-container {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-top: 20px;
-  gap: 15px;
-}
-
-.apple-login-button,
-    .google-login-button {
-  border-radius: 20px;
-  box-sizing: border-box;
-  padding: 10px 15px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
-        rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  font-size: 11px;
-  gap: 5px;
-}
-
-.apple-login-button {
-  background-color: teal;
-  color: #fff;
-  border: 2px solid #000;
-  padding: 10px 15px;
-  border: teal;
-}
-
-.login-heading {
-  text-align: center;
-  font-size: 2.25rem;
-  font-weight: 700;
-  color: #1a237e; /* deep blue */
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 30px auto;
-  padding: 16px 24px;
-  background: linear-gradient(to right, #f3f4f6, #e3f2fd); /* soft gradient */
-  border-radius: 12px;
-  max-width: 700px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-  line-height: 1.4;
-  transition: all 0.3s ease-in-out;
-}
-
-@media (max-width: 768px) {
-  .login-heading {
-    font-size: 1.5rem;
-    padding: 12px 16px;
-    margin: 20px auto;
-  }
-}
-
-@media (max-width: 480px) {
-  .login-heading {
-    font-size: 1.25rem;
-    padding: 10px 14px;
-  }
-}
-
-
-
-.google-login-button {
-  border: 2px solid #747474;
-}
-
-.apple-icon,
-    .google-icon {
-  font-size: 18px;
-  margin-bottom: 1px;
-}
-
-
-
-
-
-
-
-/* :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-} */

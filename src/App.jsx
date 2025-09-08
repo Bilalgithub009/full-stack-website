@@ -14,6 +14,7 @@ import ProductDetail from "./components/ProductDetail";
 import NotFound from "./components/NotFound";
 import CheckoutForm from "./components/CheckOutForm";
 import { AddToCart } from "./components/AddToCart";
+// import ProtectedRoute, { middleware } from "../middleware"
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -70,6 +71,16 @@ function App() {
               </>
             }
           />
+
+          {/* 
+          <Route
+            path="/admin"
+            element={
+              <ProtectedRoute middleware={middleware.admin}>
+                <Admin />
+              </ProtectedRoute>
+            }
+          /> */}
           {/* Product Detail */}
           <Route path="/product/:id" element={<ProductDetail />} />
           <Route path="*" element={<NotFound />} />
