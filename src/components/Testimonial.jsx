@@ -45,7 +45,7 @@ function Testimonials() {
     <div className="bg-white py-8 px-">
       <div className="max-w-3xl mx-auto text-center">
         <h1 className="text-2xl md:text-4xl font-extrabold text-blue-900 mb-6">
-          What People Say About Us
+          What People Say About
         </h1>
         <p className="text-gray-600 text-base md:text-lg mb-8">
           Trusted by real users of{" "}

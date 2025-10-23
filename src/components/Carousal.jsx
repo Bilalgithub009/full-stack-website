@@ -1,6 +1,5 @@
 import { Carousel } from "antd";
-import images2 from "../assets/image1.jpg";
-// import image3 from "../assets/image2.jpg";
+
 
 const carouselItems = [
   {

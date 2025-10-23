@@ -66,13 +66,6 @@ export default function Cards() {
   const [showAll, setShowAll] = useState(false);
   const navigate = useNavigate();
 
-  // whatsapp
-  const handleWhatsApp = (productName) => {
-    const phoneNumber = "+923190266227";
-    const message = `Hello, I am interested in your product: ${productName}`;
-    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-    window.open(url, "_blank");
-  };
 
   const handleViewMore = (id) => {
     navigate(`/product/${id}`);
@@ -116,8 +109,7 @@ export default function Cards() {
               {product.description}
             </p>
             <div className="flex justify-items-center gap-6 ">
-              {/* 
-              <button
+              {/* <button
                 onClick={() => handleWhatsApp(product.name)}
                 className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg"
               >
