@@ -1,13 +1,22 @@
 import { useEffect, useState } from "react";
 import CustomizedBadge from "./CustomizedBadge";
 import { Button } from "antd";
-import { X, Menu } from "lucide-react"; // Dono icons import
+import { X, Menu } from "lucide-react";
+import { useNavigate } from "react-router";
 
 export default function Header() {
+  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
-  const [islogin, setlogin] = useState(false);
+  const [isLogin, setIsLogin] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
+  // 🔹 Check login status from localStorage on page load
+  useEffect(() => {
+    const authStatus = localStorage.getItem("isAuthenticated");
+    setIsLogin(authStatus === "true");
+  }, []);
+
+  // 🔹 Scroll effect
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
@@ -15,6 +24,22 @@ export default function Header() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // 🔹 Navigation handlers
+  const gotoSignup = () => {
+    navigate("/signup");
+  };
+
+  const gotoHome = () => {
+    navigate("/");
+  };
+
+  // 🔹 Logout function
+  const handleLogout = () => {
+    localStorage.removeItem("isAuthenticated");
+    setIsLogin(false);
+    navigate("/signin"); // redirect to signin page
+  };
 
   return (
     <>
@@ -25,8 +50,8 @@ export default function Header() {
       >
         <div className="container mx-auto flex flex-wrap items-center justify-between px-4 sm:px-6 md:px-10 py-3 md:py-4 h-[60px] md:h-[80px]">
           {/* === LOGO === */}
-          <div className="flex items-center space-x-3">
-            <p className="text-black font-serif text-xl sm:text-3xl">
+          <div className="flex items-center space-x-3 cursor-pointer" onClick={gotoHome}>
+            <p className="text-black font-bold transition-all text-xl sm:text-3xl">
               BILAL
             </p>
             <div className="relative overflow-hidden h-6 w-28 sm:w-32">
@@ -39,7 +64,6 @@ export default function Header() {
               </div>
             </div>
           </div>
-
 
           {/* === DESKTOP NAV === */}
           <nav className="hidden md:flex items-center gap-10 text-base font-medium text-gray-700">
@@ -64,17 +88,22 @@ export default function Header() {
 
           {/* === LOGIN / LOGOUT === */}
           <div className="hidden md:flex items-center space-x-4">
-            {islogin ? (
+            {isLogin ? (
               <Button
+                className="p-6 m-2"
                 type="primary"
                 danger
                 size="middle"
-                onClick={() => setlogin(false)}
+                onClick={handleLogout}
               >
                 Logout
               </Button>
             ) : (
-              <Button size="middle" onClick={() => setlogin(true)}>
+              <Button
+                className="p-6 m-2"
+                size="middle"
+                onClick={gotoSignup}
+              >
                 Login
               </Button>
             )}
@@ -113,17 +142,21 @@ export default function Header() {
             </nav>
 
             <div className="flex px-6 pb-4">
-              {islogin ? (
+              {isLogin ? (
                 <Button
-                  type="primary"
+                  type="danger"
                   danger
                   block
-                  onClick={() => setlogin(false)}
+                  onClick={handleLogout}
                 >
                   Logout
                 </Button>
               ) : (
-                <Button block onClick={() => setlogin(true)}>
+                <Button
+                  type="primary"
+                  block
+                  onClick={gotoSignup}
+                >
                   Login
                 </Button>
               )}
@@ -134,7 +167,7 @@ export default function Header() {
       </header>
 
       {/* === SPACE FOR HEADER HEIGHT === */}
-      <div className="h-[60px] md:h-[90px]" />
+      <div className="h-[40px] md:h-[60px]" />
     </>
   );
 }

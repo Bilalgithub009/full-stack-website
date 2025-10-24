@@ -2,63 +2,63 @@
 function Footer() {
   return (
     <>
-      <footer className=" body-font bg-black text-white">
+      <footer className=" body-font bg-gradient to-[#ffffff] text-black">
         <div className="container px-5 py-24 mx-auto">
           <div className="flex flex-wrap md:text-left text-center order-first">
             <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-              <h2 className="title-font font-medium  text-white tracking-widest text-sm mb-3">
+              <h2 className="title-font font-medium  text-black tracking-widest text-sm mb-3">
                 CATEGORIES
               </h2>
               <nav className="list-none mb-10">
                 <li>
-                  <a className="text-white hover:text-gray-800">Home</a>
+                  <a className="text-black hover:text-gray-800">Home</a>
                 </li>
                 <li>
-                  <a className="text-white hover:text-gray-800">About Us</a>
+                  <a className="text-black hover:text-gray-800">About Us</a>
                 </li>
                 <li>
-                  <a className="text-white hover:text-gray-800">Products</a>
+                  <a className="text-black hover:text-gray-800">Products</a>
                 </li>
                 <li>
-                  <a className="text-white hover:text-gray-800">Contact Us</a>
+                  <a className="text-black hover:text-gray-800">Contact Us</a>
                 </li>
               </nav>
             </div>
             <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-              <h2 className="title-font font-medium text-white tracking-widest text-sm mb-3">
+              <h2 className="title-font font-medium text-black tracking-widest text-sm mb-3">
                 CATEGORIES
               </h2>
               <nav className="list-none mb-10">
                 <li>
-                  <a className="text-white hover:text-gray-800">Home</a>
+                  <a className="text-black hover:text-gray-800">Home</a>
                 </li>
                 <li>
-                  <a className="text-white hover:text-gray-800">About Us</a>
+                  <a className="text-black hover:text-gray-800">About Us</a>
                 </li>
                 <li>
-                  <a className="text-white hover:text-gray-800">Products</a>
+                  <a className="text-black hover:text-gray-800">Products</a>
                 </li>
                 <li>
-                  <a className="text-white hover:text-gray-800">Contact Us</a>
+                  <a className="text-black hover:text-gray-800">Contact Us</a>
                 </li>
               </nav>
             </div>
             <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-              <h2 className="title-font font-medium text-white tracking-widest text-sm mb-3">
+              <h2 className="title-font font-medium text-black tracking-widest text-sm mb-3">
                 CATEGORIES
               </h2>
               <nav className="list-none mb-10">
                 <li>
-                  <a className="text-white hover:text-gray-800">Home</a>
+                  <a className="text-black hover:text-gray-800">Home</a>
                 </li>
                 <li>
-                  <a className="text-white hover:text-gray-800">About Us</a>
+                  <a className="text-black hover:text-gray-800">About Us</a>
                 </li>
                 <li>
-                  <a className="text-white hover:text-gray-800">Products</a>
+                  <a className="text-black hover:text-gray-800">Products</a>
                 </li>
                 <li>
-                  <a className="text-white hover:text-gray-800">Contact Us</a>
+                  <a className="text-black hover:text-gray-800">Contact Us</a>
                 </li>
               </nav>
             </div>
@@ -68,7 +68,7 @@ function Footer() {
                 <div className="relative w-40 sm:w-auto xl:mr-4 lg:mr-0 sm:mr-4 mr-2">
                   <label
                     htmlFor="footer-field"
-                    className="leading-7 text-md font-bold text-white"
+                    className="leading-7 text-md font-bold text-black"
                   >
                     Email
                   </label>
@@ -76,10 +76,10 @@ function Footer() {
                     type="text"
                     id="footer-field"
                     name="footer-field"
-                    className="w-full bg-white bg-opacity-50 rounded border border-gray-300 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 text-base outline-none text-white py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                    className="w-full bg-white bg-opacity-50 rounded border border-gray-300 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 text-base outline-none text-black py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                   />
                 </div>
-                <button className="lg:mt-2 xl:mt-0 flex-shrink-0 inline-flex text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">
+                <button className="lg:mt-2 xl:mt-0 flex-shrink-0 inline-flex text-black bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">
                   Button
                 </button>
               </div>
@@ -91,17 +91,17 @@ function Footer() {
           <div className="container px-5 py-6 mx-auto flex items-center sm:flex-row flex-col">
             <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
 
-              <span className="ml-3 text-xl font-bold">SK. Garments</span>
+              <span className="ml-3 text-xl font-bold">BS Garments</span>
             </a>
             <p className="text-sm text-gray-500  sm:ml-6 sm:mt-0 mt-4">
-              © 2025 SK Garments —
+              © 2025 BS Garments —
               <a
                 href="https://twitter.com/knyttneve"
                 rel="noopener noreferrer"
                 className="text-gray-600 ml-1"
                 target="_blank"
               >
-                saadkhan@gmail.com
+                m.bilaljaliyawala@gmail.com
               </a>
             </p>
             <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">

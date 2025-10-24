@@ -10,7 +10,7 @@ const ContactSection = () => {
 
         <p className="text-black font-semibold text-lg sm:text-xl">
           We’d love to hear from you — whether it’s about sizes, custom orders,
-          or just feedback on our latest styles. Team SK Garments is here for you!
+          or just feedback on our latest styles. Team BS Garments is here for you!
         </p>
       </div>
 
@@ -54,8 +54,8 @@ const ContactSection = () => {
         </form>
 
         <div className="mt-10 text-center text-gray-600 text-sm">
-          <p>Email: <a href="mailto:skgarments@gmail.com" className="text-blue-500">skgarments@gmail.com</a></p>
-          <p className="mt-3"><span className="text-blue-600">Address:</span> Near Al Falah Masjid Bhangoriya Goth Karachi, Pakistan</p>
+          <p>Email: <a href="mailto:BSgarments@gmail.com" className="text-blue-500">BSgarments@gmail.com</a></p>
+          <p className="mt-3"><span className="text-blue-600">Address:</span> Karachi, Pakistan</p>
         </div>
       </div>
 

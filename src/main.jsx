@@ -9,9 +9,15 @@ import '@fontsource/roboto/700.css';
 // import { ThemeContext } from '@emotion/react';
 
 
+import { GoogleOAuthProvider } from '@react-oauth/google';
+import { BrowserRouter } from 'react-router';
+
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </StrictMode>
 
 )

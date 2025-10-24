@@ -27,6 +27,6 @@ export default function CustomizedBadge() {
                 </StyledBadge>
             </IconButton>
         </Link>
-    );
+    )
 }
 
