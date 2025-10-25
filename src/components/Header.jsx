@@ -1,10 +1,14 @@
 import { useEffect, useState } from "react";
 import CustomizedBadge from "./CustomizedBadge";
+import { useCart } from "@/context/cartcontext.jsx";
 import { Button } from "antd";
 import { X, Menu } from "lucide-react";
 import { useNavigate } from "react-router";
 
 export default function Header() {
+
+  const { cartCount } = useCart();
+
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const [isLogin, setIsLogin] = useState(false);
@@ -107,7 +111,7 @@ export default function Header() {
                 Login
               </Button>
             )}
-            <CustomizedBadge />
+            <CustomizedBadge count={cartCount} />
           </div>
 
           {/* === MOBILE TOGGLE === */}
@@ -160,7 +164,7 @@ export default function Header() {
                   Login
                 </Button>
               )}
-              <CustomizedBadge />
+              <CustomizedBadge count={cartCount} />
             </div>
           </div>
         )}

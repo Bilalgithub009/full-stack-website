@@ -15,7 +15,8 @@ import Header from "./components/Header";
 import ProductDetail from "./components/ProductDetail";
 import NotFound from "./components/NotFound";
 import CheckoutForm from "./components/CheckOutForm";
-import { AddToCart } from "./components/AddToCart";
+import AddToCart from "./components/AddToCart";
+
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -83,6 +84,8 @@ function App() {
       <Route path="*" element={<NotFound />} />
       <Route path="/CheckOutForm" element={<CheckoutForm />} />
       <Route path="/addtocart" element={<AddToCart />} />
+      <Route path="/cart" element={<AddToCart />} />
+
     </Routes>
   );
 }

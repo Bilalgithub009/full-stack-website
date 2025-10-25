@@ -18,7 +18,7 @@ const products = [
     frontImage: "https://static-01.daraz.pk/p/a1a97d96abf7722a017fb1ee3c88739d.jpg",
     hoverImage: "https://i.ebayimg.com/images/g/T2sAAOSwogVl1gnv/s-l1200.jpg",
     description: "Stay sleek and supported with our underjeans...",
-    price: "Rs 500",
+    price: "Rs 700",
     rating: 4.6,
   },
   {
@@ -27,7 +27,7 @@ const products = [
     frontImage: "https://cdn.aboutstatic.com/file/images/7fc945c7e70a5b63c2ed36571675f31c.jpg",
     hoverImage: "https://img01.ztat.net/article/spp-media-p1/216b2f6717dd485394356b87f49c1df9/a48d314afb0f4b639582116a9a81e670.jpg?imwidth=1800",
     description: "Slim-fit design that stays hidden and feels like a second skin...",
-    price: "Rs 500",
+    price: "Rs 300",
     rating: 4.9,
   },
   {
@@ -36,7 +36,7 @@ const products = [
     frontImage: "https://m.media-amazon.com/images/I/61Oi-M7zftL._AC_UY1100_.jpg",
     hoverImage: "https://media.naheed.pk/catalog/product/cache/57044254b6ba66615c533891fd7cf70f/c/o/config-100676-1_1.jpg",
     description: "Elegant ladies’ underwear offering style, breathability, and support...",
-    price: "Rs 500",
+    price: "Rs 450",
     rating: 5.0,
   },
 
@@ -46,7 +46,7 @@ const products = [
     frontImage: "https://m.media-amazon.com/images/I/51ef58uHevL._AC_UY1100_.jpg",
     hoverImage: "https://imagescdn.simons.ca/images/7757-25222-41-A1_2/6-ultra-comfortable-blue-boxer-brief.jpg?__=15",
     description: "Lightweight and flexible, tailored for all-day ease...",
-    price: "Rs 500",
+    price: "Rs 550",
     rating: 4.2,
   },
   {
@@ -55,7 +55,8 @@ const products = [
     frontImage: "https://nightynight.pk/cdn/shop/products/AF-115_-_I38A3868-20180630-15-06-09-Bridal_Panty_Clothing_Cotton_Panty_Ladies_Undergarments_Online_Panty_Undergarment_Women-https---dikhawa.pk_Online_Shopping_in_Pakistan-20180630-15-06-09--http_48f3e.jpg?v=1530595964",
     hoverImage: "https://m.media-amazon.com/images/I/81D-BtzZ9IL._AC_SL1500_.jpg",
     description: "Elegant ladies’ underwear with style and comfort...",
-    price: "Rs 500",
+    price: "Rs 200",
+    oldprice: "PKR 400",
     rating: 3.8,
   },
 

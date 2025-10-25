@@ -38,8 +38,9 @@ const CheckoutForm = ({ open, onClose, cartItems = [], }) => {
 🏠 Address: ${values.address}
 
 🛒 Product: ${product.name}
-🔢 Quantity: ${product.quantity}
-💰 Total: ${totalPrice} PKR
+🔢 Quantity: ${product.quantity - 2}
+💰 Total: ${totalPrice * (product.quantity - 2)} PKR
+
 
 ✅ Please confirm the order.
 `;
@@ -73,9 +74,9 @@ const CheckoutForm = ({ open, onClose, cartItems = [], }) => {
         let currentQty = updated[index].quantity;
 
         if (type === "increase") {
-            currentQty += 3; // +3 karega
+            currentQty += product.quantity; // +3 karega
         } else if (type === "decrease") {
-            currentQty = currentQty - 3 < 3 ? 3 : currentQty - 3; // kam se kam 3
+            currentQty = currentQty - 1 < 1 ? 1 : currentQty - 1; // kam se kam 3
         }
 
         updated[index].quantity = currentQty;
